@@ -1,0 +1,370 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+header nav ul{
+    border-bottom: 1px solid #ffffff4f;
+}
+
+header nav ul li{
+    position: relative;
+    padding: 0 20px;
+}
+
+header nav ul li.active a::after{
+    content:"";
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: linear-gradient(to right, #fbbd61, #ec7532)
+}
+
+header nav ul li a::after{
+    content:"";
+    display: block;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    transition: all 1s;
+    box-shadow: 0 0 20px 0 #fbbd61;
+}
+
+header nav ul li:hover a::after{
+    width: 100%;
+
+}
+
+header{  
+    position: absolute;
+    z-index: 1; 
+    left:50%;
+    transform:translateX(-50%);
+    top:5%;
+}
+
+
+
+
+
+/*Carousel*/
+.carousel-inner .carousel-item
+{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    padding-top:250px;
+
+}
+.carousel-inner .item1{
+    background-image: url(./../img/hero-1.jpg);
+}
+
+.carousel-inner .item2{
+    background-image: url(./../img/hero-2.jpg);
+}
+
+.carousel-inner .item3{
+    background-image: url(./../img/hero-3.jpg);
+}
+ 
+.carousel-indicators li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background: transparent;    /*khong có màu */
+
+}
+
+.carousel-indicators h1, h3{
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.carousel-indicators li.active {
+    background-color: white;
+  }
+  
+
+.carousel-indicators {
+    justify-items: flex-start;
+    left:0;
+    text-align: left;
+  } 
+
+.btn-trailler{
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    color: white;
+    border: none;
+    position: relative; 
+    overflow: hidden;/*cắt đi những phần dư*/
+    /* display: inline-block; */
+} 
+
+
+
+.btn-trailler::after{
+    content:"";
+    display:block;
+    width:0%;
+    height: 100%;
+    background-color: #ec7532;
+    position: absolute;
+    top:0;
+    left:-15%;
+    transform: skewX(30deg);
+    transition: all 1s;
+}
+
+.btn-trailler:hover::after{
+    width:120%;
+}
+
+.btn-trailler i,.btn-traller span {
+    position: relative;
+    z-index: 2;
+}
+
+
+.pg{
+    border:2px solid white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    font-size: 13px;
+    margin-right: 8px;
+    font-weight: 700;
+    transform: translateY(2px);
+}
+
+.title_heading{
+    text-transform: uppercase;
+    border-bottom: 1px solid #00000046;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.title_heading::after{
+    content: "";
+    display: block;
+    height: 5px;
+    width: 15%;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    position: absolute;
+    bottom: 0;
+}
+
+.newin_content h1, .rate1{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+.newin_content .rate1{
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #fbbd61;
+    
+}
+
+.grey{
+    color:grey;
+}
+
+.slick-prev:before, .slick-next:before{
+    color: #ec7532;
+}
+/* HIEU UNG CHAY OVERLAY */
+.newin_item{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.newin_details{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%) scale(0.8);
+    left:0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+}
+.newin_details i{
+    font-size: 70px;
+    width: 80px;
+    height: 80px;
+    margin:10px auto;
+    line-height: 80px;
+    font-weight: 100;
+    /* color: white;  */
+}
+
+.newin_details a{
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.newin_details span{
+    font-size: 16px;
+}
+
+.newin_overlay{
+    position: absolute;
+    top:0;
+    left: -400%;
+    transform: skewX(45deg);
+    background:linear-gradient(to right,#fbbd61, #ec7532 );
+    width: 300%;
+    height: 100%;
+    transition: all 1s;
+}
+
+.newin_item:hover .newin_overlay{
+    left: -100%;
+}
+
+.newin_item:hover .newin_details{
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* KET THUC HIEU UNG OVERLAY */
+
+/* time */
+section{
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.nav{
+    margin-bottom: 30px;
+}
+
+#time ul li{
+    border-bottom: 2px solid #d8d8d8;
+}
+
+#time ul li a{
+    color: black;   
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    margin-right: 15px;
+    position: relative;
+}
+#time ul li.active a::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -2px;
+    left:0;
+    background: linear-gradient(to right, #fbbd61, #ec7532)
+}
+
+#time ul li a.active{
+    color: #ec7532;
+}
+
+#time ul li.active a{
+    border-bottom: 1px solid #ec7532;
+}
+
+.nav-pills .nav-link.active{
+    background-color: white;
+}
+
+
+#time ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 3px;
+    transition: all .25s ease-in-out;
+    background-image: linear-gradient(to right,#fbbd61,#ec7532);
+}
+
+
+
+#time ul li:hover a::after{
+  width: 100%;
+  bottom: -3px;
+}
+
+.movie-tab{
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 4px solid #d8d8d8;
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-tab img {
+    border-radius: 10px;
+}
+
+.movie-tab h4{
+    color: #ec7532;
+}
+
+h4{
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+span{
+    margin: 0 0 20px;
+}
+
+#coming_soon{
+    margin-top: 5rem;
+    background-color: black;
+    height: 500px;
+    padding-top: 5rem;
+    color: white;
+    position: relative;
+}
+
+.bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
